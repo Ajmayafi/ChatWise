@@ -1,0 +1,165 @@
+.chat {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    
+  h1 {
+    font-size: 36px;
+    color: white;
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    justify-content: center;
+    
+    .row {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+  
+      h3 {
+        font-size: 20px;
+        color: white;
+
+      }
+  
+      .info-card {
+        padding: 10px;
+        margin: 15px;
+        background-color: #6a6d74b6;
+        color: white;
+        font-size: 18px;
+        word-break: break-all;
+        border-radius: 8px;
+  
+        &:hover {
+          background-color: #202123;
+          cursor: pointer;
+        }
+      }
+      .limit-card {
+        padding: 10px;
+        word-break: break-all;
+        margin: 15px;
+        background-color: #6a6d74b6;
+        color: white;
+        font-size: 18px;
+        border-radius: 8px;
+      }
+    }
+   }
+  
+    .chat-messages {
+      flex: 1;
+      padding: 20px;
+  
+      .message {
+        margin-bottom: 20px;
+        padding: 10px;
+        border-radius: 5px;
+        color: gainsboro;
+        font-size: 20px;
+
+        span {
+            font-weight: 700;
+        }
+  
+        &.user {
+            background-color: #1e2024b6;
+          align-self: flex-end;
+        }
+  
+        &.chatbot {
+          background-color: transparent;
+          align-self: flex-start;
+        }
+  
+        &.typing {
+          background-color: transparent;
+          color: #999;
+          font-style: italic;
+        }
+      }
+    }
+  
+    .chat-form {
+      display: flex;
+      padding: 20px;
+      background: transparent;
+  
+      textarea {
+        flex: 1;
+        height: fit-content;
+        min-height: 30px;
+        padding: 10px 10px;
+        background-color: #6a6d74b6;
+        border-radius: 5px 0 0 5px;
+        border: none;
+        outline: none;
+        color: gainsboro;
+        font-size: 19px;
+
+      }
+  
+      button[type="submit"] {
+        width: 100px;
+        height: 64px;
+        background-color: teal;
+        color: #fff;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+      }
+    }
+    .typing-effect {
+        animation: typing 3s linear infinite;
+      }
+      
+      @keyframes typing {
+        from { width: 0 }
+        to { width: 100% }
+      }
+      
+  }
+
+  @media screen and (max-width: 700px) {
+     .chat {
+        padding: 0;
+        margin: 0;
+        min-height: 100%;
+        max-height: 100%;
+
+        h1 {
+            font-size: 23px;
+        }
+     }
+   
+    .chat-form {
+        padding: 0px;
+    }
+
+    .info {
+        h3 {
+            font-size: 18px;
+        }
+    }
+
+    .info-card {
+        font-size: 15px;
+        word-break: normal;
+    }
+
+    .limit-card {
+      font-size: 15;
+      word-break: normal;
+    }
+
+    
+}
+  

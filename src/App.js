@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { createBrowserRouter, RouterProvider, Outlet, BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useContext } from "react";
+import "./styles.scss";
+import { SiteContext } from "./SiteContext";
+
+import Welcome from "./pages/Welcome";
+import Chat from "./pages/Chat";
+import Sidebar from "./components/Sidebar";
+
 
 function App() {
+  const { user } = useContext(SiteContext)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="AppLayout">
+   <Router>
+   <Sidebar /> 
+    <Routes>
+      <Route 
+      path="/"
+      element={<div className="content"><Chat /></div>}
+      />
+    </Routes>
+   </Router>
+   </div>
     </div>
   );
 }
+
 
 export default App;
